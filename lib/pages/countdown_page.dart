@@ -27,12 +27,12 @@ class _CountDownPageState extends State<CountDownPage>
   String get countText {
     Duration count = controller.duration! * controller.value;
     return controller.isDismissed
-        ? '${(controller.duration!.inHours).toString().padLeft(2, '0')}:'
-        '${(controller.duration!.inMinutes % 60).toString().padLeft(2, '0')}:'
-        '${(controller.duration!.inSeconds % 60).toString().padLeft(2, '0')}'
-        : '${(count.inHours).toString().toString().padLeft(2, '0')}:'
-        '${(count.inMinutes % 60).toString().padLeft(2, '0')}:'
-        '${(count.inSeconds % 60).toString().padLeft(2, '0')}';
+        ?   '${(controller.duration!.inHours).toString().padLeft(2, '0')}:'
+            '${(controller.duration!.inMinutes % 60).toString().padLeft(2, '0')}:'
+            '${(controller.duration!.inSeconds % 60).toString().padLeft(2, '0')}'
+        :   '${(count.inHours).toString().toString().padLeft(2, '0')}:'
+            '${(count.inMinutes % 60).toString().padLeft(2, '0')}:'
+            '${(count.inSeconds % 60).toString().padLeft(2, '0')}';
   }
 
   double progress = 1.0;
@@ -48,7 +48,9 @@ class _CountDownPageState extends State<CountDownPage>
           seconds: widget.seconds),
     );
 
-    controller.reverse(from: controller.value == 0.0 ? 1.0 : controller.value);
+    controller.reverse(from: controller.value == 0.0
+        ? 1.0
+        : controller.value);
 
     controller.addListener(() {
       if (controller.isAnimating) {
@@ -146,7 +148,9 @@ class _CountDownPageState extends State<CountDownPage>
                       });
                     } else {
                       controller.reverse(
-                          from: controller.value == 0 ? 1.0 : controller.value);
+                          from: controller.value == 0
+                              ? 1.0
+                              : controller.value);
                       setState(() {
                         isPlaying = true;
                       });

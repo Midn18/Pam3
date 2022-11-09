@@ -105,7 +105,7 @@ class _TimePickerPageState extends State<TimePickerPage> {
                               seconds: _currentSecondsValue)),
                     );
                   },
-                  child: ActionButtons(
+                  child: const ActionButtons(
                     icon: MyFlutterApp.playIcon,
                   ),
                 ),

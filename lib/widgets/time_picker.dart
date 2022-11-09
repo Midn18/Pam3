@@ -27,11 +27,11 @@ class _TimePickerState extends State<TimePicker> {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: Color.fromRGBO(33, 44, 50, 1),
+            color: const Color.fromRGBO(33, 44, 50, 1),
             borderRadius: BorderRadius.circular(5),
           ),
           child: NumberPicker(
-            selectedTextStyle: TextStyle(color: Colors.white, fontSize: 40),
+            selectedTextStyle: const TextStyle(color: Colors.white, fontSize: 40),
             itemHeight: 80,
             itemWidth: 80,
             itemCount: 1,
